@@ -3,6 +3,8 @@
 namespace Modules\Product\Entities;
 
 use Illuminate\Database\Eloquent\Model;
+use Modules\Category\Entities\CategoryProduct;
+use Modules\Category\Entities\Category;
 
 class Product extends Model
 {
@@ -14,4 +16,6 @@ class Product extends Model
     public function categoryProduct(){
         return $this->hasMany(CategoryProduct::class);
     }
+
+    
 }

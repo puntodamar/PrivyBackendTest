@@ -5,6 +5,13 @@ namespace Modules\Category\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Arr;
+use DB;
+
+use Modules\Category\Entities\Category;
+
+use Modules\Category\Http\Requests\CreateCategoryRequest;
+use Modules\Category\Http\Requests\UpdateCategoryRequest;
 
 class CategoryController extends Controller
 {
@@ -14,59 +21,51 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('category::index');
+        return response()->json(Category::all()->toArray());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     * @return Response
-     */
-    public function create()
-    {
-        return view('category::create');
+    public function store(CreateCategoryRequest $request){
+        try{
+            DB::beginTransaction();
+            $category = Category::create($request->all());
+            DB::commit();
+            return response()->json($category);
+        }
+        catch(\Exception $e){
+            return response()->json([
+                'message'   => $e->getMessage()
+            ]);
+        }
     }
 
-    /**
-     * Store a newly created resource in storage.
-     * @param  Request $request
-     * @return Response
-     */
-    public function store(Request $request)
-    {
+    public function show(Category $category){
+        try{
+            return response()->json($category);
+        }
+        catch(\Exception $e){
+            return response()->json([
+                'message'   => $e->getMessage()
+            ]);
+        }       
     }
 
-    /**
-     * Show the specified resource.
-     * @return Response
-     */
-    public function show()
-    {
-        return view('category::show');
+    public function update(UpdateCategoryRequest $request,Category $category){
+        try{
+            DB::beginTransaction();
+            $category->update($request->all());
+            DB::commit();
+            return response()->json($category);
+        }
+        catch(\Exception $e){
+            return response()->json([
+                'message'   => $e->getMessage()
+            ]);
+        }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     * @return Response
-     */
-    public function edit()
-    {
-        return view('category::edit');
+    public function destroy(Category $category){
+        $category->delete();
+        return response()->json(['message' => 'success']);
     }
 
-    /**
-     * Update the specified resource in storage.
-     * @param  Request $request
-     * @return Response
-     */
-    public function update(Request $request)
-    {
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     * @return Response
-     */
-    public function destroy()
-    {
-    }
 }

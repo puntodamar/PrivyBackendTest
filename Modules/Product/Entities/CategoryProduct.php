@@ -4,6 +4,7 @@ namespace Modules\Product\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 use Modules\Category\Entities\Category;
+use Modules\Product\Entities\Product;
 
 class CategoryProduct extends Model
 {
@@ -12,10 +13,10 @@ class CategoryProduct extends Model
     protected $fillable     = ['product_id', 'category_id'];
 
     public function product(){
-        return $this->belongsTo(Product::class);
+        return $this->belongsToMany(Product::class);
     }
 
     public function category(){
-        return $this->belongsTo(Catgory::class);
+        return $this->belongsToMany(Category::class);
     }
 }
