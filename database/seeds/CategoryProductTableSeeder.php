@@ -11,6 +11,11 @@ class CategoryProductTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('category_product')->insert([
+            [
+                'product_id'    => 1,
+                'category_id'   => 1
+            ]
+        ]);
     }
 }
