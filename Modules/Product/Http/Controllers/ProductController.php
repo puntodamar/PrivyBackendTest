@@ -11,17 +11,16 @@ use Illuminate\Support\Arr;
 
 use DB;
 
-use Illuminate\Support\Facades\Storage;
 class ProductController extends Controller
 {
     public function index()
     {
-        return response()->json(Product::with('category')->get()->toArray());
+        return response()->json(Product::show()->get()->toArray());
     }
 
-    public function show($id){
+    public function show(Product $product){
         try{
-            return response()->json(Product::with('category')->where('id',$id)->get()->toArray());
+            return response()->json(Product::show()->where('id',$product->id)->get()->toArray());
         }
         catch(\Exception $e){
             return response()->json([

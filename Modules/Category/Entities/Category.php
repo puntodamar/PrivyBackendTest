@@ -15,6 +15,8 @@ class Category extends Model
         'enable'    => 'boolean'
     ];
 
+    protected $hidden = ['pivot'];
+
     public function categoryProduct(){
         return $this->hasMany(CategoryProduct::class);
     }

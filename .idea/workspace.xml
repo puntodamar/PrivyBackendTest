@@ -2,30 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2062315-1266-4d8f-88a6-a289b3ca5104" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/composerJson.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/lib/ImageHelper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Category/Entities/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Category/Entities/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Category/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Category/Http/Controllers/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Category/Http/Requests/UpdateCategoryRequest.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Image/Entities/Image.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Image/Entities/Image.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Image/Http/Controllers/ImageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Image/Http/Controllers/ImageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Image/Routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Image/Routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Image/Routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Image/Routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Product/Entities/CategoryProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Product/Entities/CategoryProduct.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Product/Entities/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Product/Entities/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Product/Entities/ProductImage.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Product/Entities/ProductImage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Product/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Product/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Product/Http/Requests/CreateProductRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Product/Http/Requests/CreateProductRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Product/Routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Product/Routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Product/Routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Product/Routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_05_105610_create_category_product_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_05_105610_create_category_product_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_05_105943_create_product_image_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_05_105943_create_product_image_table.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,50 +15,52 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-1017922006">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.19" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.49" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="json" value="5" />
-          <entry key="php" value="3183" />
+          <entry key="php" value="3586" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="3183" />
+          <entry key="PHP" value="3586" />
           <entry key="composer.json" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="json" value="1" />
-          <entry key="php" value="17" />
+          <entry key="php" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PHP" value="17" />
+          <entry key="PHP" value="21" />
           <entry key="composer.json" value="1" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modules/Product/Http/Controllers/ProductController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="69" selection-start-line="69" selection-end-line="69" />
+            <state relative-caret-position="286">
+              <caret line="22" column="77" lean-forward="true" selection-start-line="22" selection-start-column="77" selection-end-line="22" selection-end-column="77" />
               <folding>
                 <element signature="e#52#80#0#PHP" expanded="true" />
               </folding>
@@ -87,8 +71,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modules/Product/Entities/Product.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="38">
+              <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
               <folding>
                 <element signature="e#44#83#0#PHP" expanded="true" />
               </folding>
@@ -96,11 +80,20 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Modules/Category/Entities/Category.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="15" column="6" lean-forward="true" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Modules/Image/Entities/Image.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="36" column="10" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
+            <state relative-caret-position="237">
+              <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
               <folding>
                 <element signature="e#42#66#0#PHP" expanded="true" />
               </folding>
@@ -109,10 +102,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/lib/ImageHelper.php">
+        <entry file="file://$PROJECT_DIR$/Modules/Product/Routes/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="106" column="9" selection-start-line="106" selection-start-column="9" selection-end-line="106" selection-end-column="9" />
+            <state relative-caret-position="176">
+              <caret line="8" selection-start-line="8" selection-start-column="2" selection-end-line="10" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -137,9 +130,11 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_03_05_105943_create_product_image_table.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/config/app.php" />
-        <option value="$PROJECT_DIR$/Modules/Product/Entities/Product.php" />
-        <option value="$PROJECT_DIR$/Modules/Product/Http/Controllers/ProductController.php" />
         <option value="$PROJECT_DIR$/app/lib/ImageHelper.php" />
+        <option value="$PROJECT_DIR$/Modules/Product/Routes/api.php" />
+        <option value="$PROJECT_DIR$/Modules/Product/Http/Controllers/ProductController.php" />
+        <option value="$PROJECT_DIR$/Modules/Product/Entities/Product.php" />
+        <option value="$PROJECT_DIR$/Modules/Category/Entities/Category.php" />
         <option value="$PROJECT_DIR$/Modules/Image/Entities/Image.php" />
       </list>
     </option>
@@ -304,6 +299,33 @@
             <path>
               <item name="privy" type="b2602c69:ProjectViewProjectNode" />
               <item name="privy" type="462c0819:PsiDirectoryNode" />
+              <item name="Modules" type="462c0819:PsiDirectoryNode" />
+              <item name="Product" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="privy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="privy" type="462c0819:PsiDirectoryNode" />
+              <item name="Modules" type="462c0819:PsiDirectoryNode" />
+              <item name="Product" type="462c0819:PsiDirectoryNode" />
+              <item name="Entities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="privy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="privy" type="462c0819:PsiDirectoryNode" />
+              <item name="Modules" type="462c0819:PsiDirectoryNode" />
+              <item name="Product" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="privy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="privy" type="462c0819:PsiDirectoryNode" />
+              <item name="Modules" type="462c0819:PsiDirectoryNode" />
+              <item name="Product" type="462c0819:PsiDirectoryNode" />
+              <item name="Routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="privy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="privy" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -348,12 +370,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1551843156506</updated>
-      <workItem from="1551843163181" duration="11548000" />
+      <workItem from="1551843163181" duration="11716000" />
+      <workItem from="1551857691454" duration="726000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11548000" />
+    <option name="totallyTimeSpent" value="12442000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -420,9 +443,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="62" column="5" lean-forward="true" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
-          <folding>
-            <element signature="e#53#81#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -443,20 +463,24 @@
     <entry file="file://$PROJECT_DIR$/Modules/Category/Entities/CategoryProduct.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Category/Entities/Category.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/lib/ImageHelper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
+        <state relative-caret-position="359">
           <caret line="106" column="9" selection-start-line="106" selection-start-column="9" selection-end-line="106" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Product/Routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" selection-start-line="8" selection-start-column="2" selection-end-line="10" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Modules/Product/Http/Controllers/ProductController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
+        <state relative-caret-position="286">
+          <caret line="22" column="77" lean-forward="true" selection-start-line="22" selection-start-column="77" selection-end-line="22" selection-end-column="77" />
           <folding>
             <element signature="e#52#80#0#PHP" expanded="true" />
           </folding>
@@ -465,18 +489,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Modules/Product/Entities/Product.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="38">
+          <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
           <folding>
             <element signature="e#44#83#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Category/Entities/Category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="15" column="6" lean-forward="true" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Modules/Image/Entities/Image.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="36" column="10" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
+        <state relative-caret-position="237">
+          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
           <folding>
             <element signature="e#42#66#0#PHP" expanded="true" />
           </folding>

@@ -15,6 +15,7 @@ class Image extends Model
     protected $casts    = [
         'enable'    => 'boolean'
     ];
+    protected $hidden = ['pivot'];
 
     public function productImage(){
         return $this->hasMany(ProductImage::class);

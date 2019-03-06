@@ -30,6 +30,12 @@ class Product extends Model
         return $this->belongsToMany(Image::class,'product_image');
     }
 
+    public function scopeShow($query){
+        return $this->with(['category' => function($cat){
+            $cat->select('name');
+        },'image']);
+    }
+
     public function scopeUploadPhotos($query,$id,$photos){
         $images = [];
 
