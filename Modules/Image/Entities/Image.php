@@ -15,7 +15,8 @@ class Image extends Model
     protected $casts    = [
         'enable'    => 'boolean'
     ];
-    protected $hidden = ['pivot'];
+    protected $hidden   = ['pivot','file'];
+    protected $appends  = ['url'];
 
     public function productImage(){
         return $this->hasMany(ProductImage::class);
@@ -23,6 +24,10 @@ class Image extends Model
 
     public function product(){
         return $this->belongsToMany(Product::class,'product_image');
+    }
+
+    public function getUrlAttribute(){
+        return env('APP_URL').'/public'.$this->attributes['file'];
     }
 
     public function scopeDeleteImages($query,$id,$images){

@@ -45,7 +45,7 @@ class Product extends Model
             $filename   = ImageHelper::uploadPhoto($img['file'],$realPath,1000,time())['filename'];
             $image      = Image::create([
                 'name'      => $img['name'],
-                'file'      => env('APP_URL').$uploadPath.$filename,
+                'file'      => $uploadPath.$filename,
                 'enable'    => true
             ]);
 
