@@ -1,11 +1,17 @@
 # Instalasi
 
 1.) Install xampp [terbaru](https://www.apachefriends.org/download.html)
+
 2.) Buka XAMPP, aktifkan Apache dan MySQL
+
 3.) lakukan *clone* ke dalam folder `xampp/htdocs/privy`
+
 4.) install laravel dengan perintah `composer install` pada terminal di folder privy
+
 5.) buat database baru *(New)* bernama **'privy'** lewat URL http://localhost/phpmyadmin
+
 6.) Lakukan *migration* dengan perintah `php artisan migrate`
+
 7.) Lakukan *seeding* dengan perintah `php artisan db:seed` 
 Jika *database* masih kosong maka lakukan *seeding* satu persatu **secara berurutan** :
 
