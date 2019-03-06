@@ -22,14 +22,17 @@ class CategoryController extends Controller
         return response()->json(Category::all()->toArray());
     }
 
-    public function store(CreateCategoryRequest $request){
+    public function store(Request $request){
         try{
             DB::beginTransaction();
-            $category = Category::create($request->all());
+            foreach($request['categories'] as $cat){
+                Category::insert($cat);
+            }
             DB::commit();
-            return response()->json($category);
+            return response()->json(Category::all());
         }
         catch(\Exception $e){
+            DB::rollback();
             return response()->json([
                 'message'   => $e->getMessage()
             ]);

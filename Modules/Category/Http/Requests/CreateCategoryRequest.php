@@ -14,8 +14,8 @@ class CreateCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'      => 'string|required',
-            'enable'    => 'boolean|required'
+            'categories.*.name'      => 'string|required',
+            'categories.*.enable'    => 'boolean|required'
         ];
     }
 
