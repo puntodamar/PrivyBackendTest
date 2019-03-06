@@ -27,7 +27,6 @@ class Image extends Model
 
     public function scopeDeleteImages($query,$id,$images){
         //$data   = $this->whereIn('id',$images);
-
         $data   =
             $this->whereHas('ProductImage', function($pi) use($id){
                 $pi->where('product_id',$id);
@@ -37,8 +36,7 @@ class Image extends Model
         $loop   = $loop->get();
 
         foreach($loop as $d){
-            $filename = str_replace(env('APP_URL'),'',$d['file']);
-            ImageHelper::deletePhoto(public_path().$filename);
+            ImageHelper::deletePhoto($d['file']);
         }
 
         $data->delete();

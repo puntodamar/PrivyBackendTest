@@ -2,6 +2,7 @@
 
 namespace Modules\Product\Http\Controllers;
 
+use App\lib\ImageHelper;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
@@ -97,6 +98,10 @@ class ProductController extends Controller
     }
 
     public function destroy(Product $product){
+
+        foreach($product->image as $img){
+            ImageHelper::deletePhoto($img->file);
+        }
 
         $product->delete();
         return response()->json(['message' => 'success']);

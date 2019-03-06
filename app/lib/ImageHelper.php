@@ -94,6 +94,8 @@ class ImageHelper{
     }
 
     public static function deletePhoto($path){
+        $path = public_path().str_replace(env('APP_URL'),'',$path);
+
         if (file_exists($path)) {
             if (unlink($path)) {
                 return true;
