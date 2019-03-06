@@ -16,7 +16,9 @@ class CreateProductRequest extends FormRequest
         return [
             'name'          => 'string|required',
             'description'   => 'string|required',
-            'enable'        => 'boolean'
+            'enable'        => 'boolean',
+            'category.*'    => 'numeric|exists:category',
+            'image.*'       => 'numeric|exists:image'
         ];
     }
 

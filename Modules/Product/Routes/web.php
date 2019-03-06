@@ -11,9 +11,10 @@
 |
 */
 
-Route::group([
-    'prefix'        => 'product',
-    // 'namespace'     => 'Modules\Product\Http\Controllers'
-], function(){
-    Route::get('/', 'ProductController@index');
-});
+// Route::group(['prefix' => 'api/product'], function(){
+//     Route::post('/',    'ProductController@store');
+//     //Route::get('/',     'ProductController@index');
+//     Route::get('/{id}', 'ProductController@show');
+    
+// });
+

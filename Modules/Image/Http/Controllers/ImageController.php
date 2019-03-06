@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 
+use DB;
+use Modules\Image\Entities\Image;
+
 class ImageController extends Controller
 {
     /**
@@ -14,7 +17,7 @@ class ImageController extends Controller
      */
     public function index()
     {
-        return view('image::index');
+        return response()->Json(Image::all()->toArray());
     }
 
     /**

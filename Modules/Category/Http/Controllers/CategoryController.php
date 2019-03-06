@@ -11,7 +11,6 @@ use DB;
 use Modules\Category\Entities\Category;
 
 use Modules\Category\Http\Requests\CreateCategoryRequest;
-use Modules\Category\Http\Requests\UpdateCategoryRequest;
 
 class CategoryController extends Controller
 {
@@ -49,7 +48,7 @@ class CategoryController extends Controller
         }       
     }
 
-    public function update(UpdateCategoryRequest $request,Category $category){
+    public function update(Request $request, Category $category){
         try{
             DB::beginTransaction();
             $category->update($request->all());

@@ -5,56 +5,88 @@ namespace Modules\Product\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Modules\Image\Entities\Image;
 use Modules\Product\Entities\Product;
 use Illuminate\Support\Arr;
+
 use DB;
 
-use Modules\Category\Entities\Category;
-
-
-use Modules\Product\Http\Requests\CreateProductRequest;
-
+use Illuminate\Support\Facades\Storage;
 class ProductController extends Controller
 {
     public function index()
     {
-        return response()->json(Product::with(['CategoryProduct' => function($cp){
-            $cp->with('Category');
-        }])->get()->toArray());
+        return response()->json(Product::with('category')->get()->toArray());
     }
 
     public function show($id){
-        $product = Product::find($id);
-        if($product){
-            return response()->json($product->with(['CategoryProduct' => function($cp){
-                $cp->with('Category');
-            }])->get()->toArray()); 
+        try{
+            return response()->json(Product::with('category')->where('id',$id)->get()->toArray());
         }
-        else{
-            return response()->json(['message' => 'Product not found'],404);
+        catch(\Exception $e){
+            return response()->json([
+                'message' => $e->getMessage()
+            ]);
         }
-       
     }
 
-    public function store(CreateProductRequest $request){
-
-
+    public function store(Request $request){
         try{
-            
             DB::beginTransaction();
 
             $product = Product::create(Arr::except($request->all(),['category']));
-            if(isset($request['category'])){
-                
-                // Product::find($product->id)
-                //     ->categoryProduct()->sync(Arr::only($request->all(),['category']));
-                var_dump(Product::find($product->id)->categoryProduct()); exit();
-                
+
+            if(isset($request['image'])){
+                Product::uploadPhotos($product->id,$request['image']);
             }
-            // DB::commit();
-            // return response()->json([
-            //     'message'   => 'success', 
-            //     'data'      => $product]);
+
+
+            if(isset($request['category'])){
+                Product::find($product->id)->category()->sync($request['category']);
+            }
+
+
+            DB::commit();
+            return response()->json([
+                'message'   => 'success', 
+                'data'      => $product]);
+        }
+        catch(\Exception $e){
+            DB::rollback();
+            return response()->json([
+
+                'message'   => $e->getMessage(),
+                'line'      => $e->getLine(),
+                'file'      => $e->getFile()
+            ]);
+        
+        }
+    }
+
+    public function update(Request $request, Product $product){
+        try{
+
+            DB::beginTransaction();
+
+            $product->update($request->except(['category','image']));
+
+            if(isset($request['category'])){
+               $product->category()->sync($request->get('category'));         
+            }
+
+            if(isset($request['remove_image'])){
+                Image::deleteImages($request['remove_image']);
+            }
+
+            if(isset($request['new_image'])){
+                Product::uploadPhotos($product->id,$request['new_image']);
+            }
+
+
+            DB::commit();
+            return response()->json([
+                'message'   => 'update success',
+                'data'      => $product]);
         }
         catch(\Exception $e){
             DB::rollback();
@@ -64,10 +96,11 @@ class ProductController extends Controller
             ]);
         
         }
+    }
 
-
-            
-       
+    public function destroy(Product $product){
+        $product->delete();
+        return response()->json(['message' => 'success']);
     }
  
 }

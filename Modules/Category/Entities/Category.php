@@ -4,7 +4,7 @@ namespace Modules\Category\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 use Modules\Category\Entities\CategoryProduct;
-use Modules\Category\Entities\Product;
+use Modules\Product\Entities\Product;
 
 class Category extends Model
 {
@@ -16,7 +16,10 @@ class Category extends Model
     ];
 
     public function categoryProduct(){
-        $this->hasMany(CategoryProduct::class);
+        return $this->hasMany(CategoryProduct::class);
     }
 
+    public function product(){
+        return $this->belongsToMany(Product::class);
+    }
 }

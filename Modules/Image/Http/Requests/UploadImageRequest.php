@@ -1,10 +1,10 @@
 <?php
 
-namespace Modules\Category\Http\Requests;
+namespace Modules\Image\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateCategoryRequest extends FormRequest
+class UploadImageRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.
@@ -14,9 +14,9 @@ class UpdateCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'id'        => 'numeric|required|exists:category',
-            'name'      => 'string|required',
-            'enable'    => 'boolean|required'
+            'name'  => 'string|required',
+            'file'      => 'string|required',
+            'enable'   => 'boolean|required'
         ];
     }
 

@@ -12,6 +12,6 @@ class ProductImage extends Model
     protected $fillable = ['product_id', 'image_id'];
 
     public function image(){
-        return $this->belongsTo(Image::class);
+        return $this->belongsToMany(Image::class);
     }
 }

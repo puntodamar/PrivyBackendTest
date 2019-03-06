@@ -20,8 +20,8 @@ class CreateCategoryProductTable extends Migration
         });
 
         Schema::table('category_product', function (Blueprint $table) {
-            $table->foreign('product_id')->references('id')->on('product');
-            $table->foreign('category_id')->references('id')->on('category');
+            $table->foreign('product_id')->references('id')->on('product')->onDelete('cascade');
+            $table->foreign('category_id')->references('id')->on('category')->onDelete('cascade');
         });
     }
 
