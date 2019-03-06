@@ -21,6 +21,8 @@ Jika *database* masih kosong maka lakukan *seeding* satu persatu **secara beruru
  - `php artisan db:seed --class="ImageTableSeeder"`
  - `php artisan db:seed --class="ProductImageTableSeeder"`
 
+
+
 # ENDPOINT
 Untuk mencoba API endpoint digunakan [POSTMAN](https://www.getpostman.com/downloads/).  Masukkan URL dan *HTTP Request Method* seperti yang dicontohkan di bawah. Untuk endpoint selain GET Anda perlu memberikan body berupa data dengan format JSON. Sebelum dikirimkan, [cek validitas format JSON](https://jsonlint.com/). Untuk sementara sistem menganggap semua request adalah valid.
  
@@ -67,6 +69,8 @@ Contoh :
  5. [GET] `/api/category/{id}`
  Memilih sebuah kategori.
  
+## Product
+
  6. [GET] `/api/product`
  Melihat seluruh produk
  

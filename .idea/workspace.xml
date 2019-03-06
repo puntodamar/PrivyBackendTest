@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2062315-1266-4d8f-88a6-a289b3ca5104" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Modules/Image/Routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Image/Routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -89,7 +88,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="318">
-                <caret line="117" column="1" selection-start-line="117" selection-start-column="1" selection-end-line="117" selection-end-column="1" />
+                <caret line="127" column="1" selection-start-line="127" selection-start-column="1" selection-end-line="127" selection-end-column="1" />
               </first_editor>
               <second_editor />
             </state>
@@ -356,12 +355,12 @@
       <option name="presentableId" value="Default" />
       <updated>1551843156506</updated>
       <workItem from="1551843163181" duration="11716000" />
-      <workItem from="1551857691454" duration="5337000" />
+      <workItem from="1551857691454" duration="5590000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17053000" />
+    <option name="totallyTimeSpent" value="17306000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -534,7 +533,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="318">
-            <caret line="117" column="1" selection-start-line="117" selection-start-column="1" selection-end-line="117" selection-end-column="1" />
+            <caret line="127" column="1" selection-start-line="127" selection-start-column="1" selection-end-line="127" selection-end-column="1" />
           </first_editor>
           <second_editor />
         </state>
