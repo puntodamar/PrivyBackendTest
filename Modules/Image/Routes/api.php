@@ -13,4 +13,4 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::resource('image', 'ImageController');
+//Route::resource('image', 'ImageController');

@@ -1,71 +1,118 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# Instalasi
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+1.) Install xampp [terbaru](https://www.apachefriends.org/download.html)
+2.) Buka XAMPP, aktifkan Apache dan MySQL
+3.) lakukan *clone* ke dalam folder `xampp/htdocs/privy`
+4.) install laravel dengan perintah `composer install` pada terminal di folder privy
+5.) buat database baru *(New)* bernama **'privy'** lewat URL http://localhost/phpmyadmin
+6.) Lakukan *migration* dengan perintah `php artisan migrate`
+7.) Lakukan *seeding* dengan perintah `php artisan db:seed` 
+Jika *database* masih kosong maka lakukan *seeding* satu persatu **secara berurutan** :
 
-## About Laravel
+ - `php artisan db:seed --class="CategoryTableSeeder"`
+ - `php artisan db:seed --class="ProductTableSeeder"`
+ - `php artisan db:seed --class="CategoryProductTableSeeder"`
+ - `php artisan db:seed --class="ImageTableSeeder"`
+ - `php artisan db:seed --class="ProductImageTableSeeder"`
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# ENDPOINT
+Untuk mencoba API endpoint digunakan [POSTMAN](https://www.getpostman.com/downloads/).  Masukkan URL dan *HTTP Request Method* seperti yang dicontohkan di bawah. Untuk endpoint selain GET Anda perlu memberikan body berupa data dengan format JSON. Sebelum dikirimkan, [cek validitas format JSON](https://jsonlint.com/). Untuk sementara sistem menganggap semua request adalah valid.
+ 
+![enter image description here](https://lh3.googleusercontent.com/pw93Ti5w6IaZErMbGKe-LDnPdwA2t9yjvPheAaT3lVVLxvR9HcRWTYwYb7mxUZu5YM8ePpqY85k6)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Category
 
-## Learning Laravel
+ 1. [GET] `/api/category`
+Melihat seluruh kategori produk
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+ 3. [POST] `/api/category`
+ Menambahkan banyak kategori sekaligus. Data yang wajib diisikan adalah `name` dan `enable`. Contoh :
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost you and your team's skills by digging into our comprehensive video library.
+Contoh :
 
-## Laravel Sponsors
+    {
+    	"categories" : 
+    	[
+	    	{
+		    	"name" : "kaos",
+		    	"enable" : true
+	    	},
+	    	{
+		    	"name" : "celana",
+		    	"enable": false
+	    	}
+    	]
+    }
+    
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+ 4. [DELETE] `/api/category/mass-delete`
+Menghapus banyak kategori sekaligus. 
+Data yang dikirimkan adalah `id` dari kategori yang ingin dihapus. 
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
+Contoh :
 
-## Contributing
+    {
+    	"category_ids" : [1,2,3,4]
+    }
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+ 5. [GET] `/api/category/{id}`
+ Memilih sebuah kategori.
+ 
+ 6. [GET] `/api/product`
+ Melihat seluruh produk
+ 
+ 7. [POST] `/api/product`
+Menambahkan produk.
+Data yang wajib diisikan adalah `name`, `description`, dan `enable`.
+*Field* `category` ditambahkan jika ingin memberikan kategori pada produk.
+*Field* *image* ditambahkan untuk menambahkan gambar produk.  Produk dapat memiliki gambar dengan jumlah tak terbatas. 
+*Field* `file` adalah gambar yang sudah di-*encode* ke dalam format *base64*. Konversi dilakukan menggunakan lewat situs https://www.base64-image.de/
 
-## License
+Contoh :
 
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    {
+    	"name" : "nama produk",
+    	"description" : "lorem ipsum",
+    	"enable" : true,
+    	"category" : [1,2,3],
+    	"image": [{
+    		"name" : "nampak depan",
+    		"file" : "data:image/jpeg;base64,/9j/4AA..."
+    	}]
+    }
+
+ 8. [GET] `/api/product/{id}`
+ Melihat detail produk.
+ 
+ 9. [PATCH] /api/product/{id}
+Melakukan update data produk.
+Data yang wajib diberikan adalah `name`, `description`, dan `enable`.
+*Field* `remove_image` diisikan untuk menghapus gambar *image*.
+*Field* `new_image` diisikan untuk menambahkan gambar baru.
+
+Contoh :
+
+    {
+    	"name" : "nama produk",
+    	"description" : "lorem ipsum",
+    	"enable" : true,
+    	"remove_image" : [1,2,3],
+    	"image": 
+    	[
+	    	{
+	    		"name" : "nama gambar 1",
+	    		"file" : "data:image/jpeg;base64,/9j/4AA..."
+	    	},
+		    	{
+	    		"name" : "nama gambar 2",
+	    		"file" : "data:image/jpeg;base64,/9j/4AA..."
+	    	},    	
+    	]
+    }
+    
+ 10. [DELETE] /api/product/{id}
+ Menghapus produk
+ 
