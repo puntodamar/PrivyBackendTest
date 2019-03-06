@@ -25,8 +25,14 @@ class Image extends Model
         return $this->belongsToMany(Product::class,'product_image');
     }
 
-    public function scopeDeleteImages($query,$images){
-        $data   = $this->whereIn('id',$images);
+    public function scopeDeleteImages($query,$id,$images){
+        //$data   = $this->whereIn('id',$images);
+
+        $data   =
+            $this->whereHas('ProductImage', function($pi) use($id){
+                $pi->where('product_id',$id);
+            })->whereIn('id',$images);
+
         $loop   = clone $data;
         $loop   = $loop->get();
 

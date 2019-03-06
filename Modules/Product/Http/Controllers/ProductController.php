@@ -73,7 +73,7 @@ class ProductController extends Controller
             }
 
             if(isset($request['remove_image'])){
-                Image::deleteImages($request['remove_image']);
+                Image::deleteImages($product->id,$request['remove_image']);
             }
 
             if(isset($request['new_image'])){
@@ -97,6 +97,7 @@ class ProductController extends Controller
     }
 
     public function destroy(Product $product){
+
         $product->delete();
         return response()->json(['message' => 'success']);
     }
