@@ -13,11 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::resource('category', 'CategoryController');
+Route::group(['prefix' => 'category'], function(){
+    Route::put('/mass-update', 'CategoryController@massUpdate')->name('category.mass-update');
+    Route::delete('/mass-delete', 'CategoryController@massDelete');
+});
 
-// Route::group(['prefix' => 'category'], function(){
-//     Route::get('/', 'CategoryController@index');
-//     Route::post('/', 'CategoryController@store');
-//     Route::put('/{id}', 'CategoryController@update');
-//     Route::get('/{id}', 'CategoryController@show');
-// });
+Route::apiResource('category', 'CategoryController');
+

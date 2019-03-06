@@ -5,7 +5,6 @@ namespace Modules\Category\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Arr;
 use DB;
 
 use Modules\Category\Entities\Category;
@@ -62,9 +61,42 @@ class CategoryController extends Controller
         }
     }
 
+    public function massUpdate(Request $request){
+        try{
+            DB::beginTransaction();
+
+            foreach($request->all() as $cat){
+                Category::find($cat['id'])->update($cat);
+            }
+
+            DB::commit();
+            return response()->json(Category::all());
+        }
+        catch(\Exception $e){
+            DB::rollback();
+            return response()->json([
+                'message'   => $e->getMessage()
+            ]);
+        }
+    }
+
     public function destroy(Category $category){
         $category->delete();
         return response()->json(['message' => 'success']);
     }
 
+    public function massDelete(Request $request){
+        try{
+            DB::beginTransaction();
+            Category::whereIn('id',$request['category_ids'])->delete();
+            DB::commit();
+            return response()->json(Category::all());
+        }
+        catch(\Exception $e){
+            DB::rollback();
+            return response()->json([
+                'message'   => $e->getMessage()
+            ]);
+        }
+    }
 }

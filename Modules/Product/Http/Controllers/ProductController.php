@@ -53,7 +53,6 @@ class ProductController extends Controller
         catch(\Exception $e){
             DB::rollback();
             return response()->json([
-
                 'message'   => $e->getMessage(),
                 'line'      => $e->getLine(),
                 'file'      => $e->getFile()
